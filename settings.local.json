@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ssh hero:*)",
+      "Bash(ssh:*)",
+      "WebSearch",
+      "WebFetch(domain:dlcdnets.asus.com)"
+    ]
+  }
+}
