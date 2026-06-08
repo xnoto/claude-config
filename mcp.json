@@ -5,8 +5,8 @@
       "url": "https://mcp.linear.app/mcp"
     },
     "notion": {
-      "type": "sse",
-      "url": "https://mcp.notion.com/sse"
+      "type": "http",
+      "url": "https://mcp.notion.com/mcp"
     },
     "aws-api-staging": {
       "command": "uvx",
