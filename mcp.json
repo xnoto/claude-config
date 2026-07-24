@@ -8,23 +8,27 @@
       "type": "http",
       "url": "https://mcp.notion.com/mcp"
     },
-    "aws-api-staging": {
+    "aws-staging": {
       "command": "uvx",
-      "args": ["awslabs.aws-api-mcp-server@latest"],
-      "env": {
-        "READ_OPERATIONS_ONLY": "true",
-        "AWS_REGION": "us-east-2",
-        "AWS_API_MCP_PROFILE_NAME": "staging"
-      }
+      "args": [
+        "mcp-proxy-for-aws@1.6.4",
+        "https://aws-mcp.us-east-1.api.aws/mcp",
+        "--profile", "staging",
+        "--read-only",
+        "--metadata", "AWS_REGION=us-east-2"
+      ],
+      "timeout": 100000
     },
-    "aws-api-prod": {
+    "aws-prod": {
       "command": "uvx",
-      "args": ["awslabs.aws-api-mcp-server@latest"],
-      "env": {
-        "READ_OPERATIONS_ONLY": "true",
-        "AWS_REGION": "us-east-2",
-        "AWS_API_MCP_PROFILE_NAME": "prod"
-      }
+      "args": [
+        "mcp-proxy-for-aws@1.6.4",
+        "https://aws-mcp.us-east-1.api.aws/mcp",
+        "--profile", "prod",
+        "--read-only",
+        "--metadata", "AWS_REGION=us-east-2"
+      ],
+      "timeout": 100000
     },
     "aws-docs": {
       "command": "uvx",
