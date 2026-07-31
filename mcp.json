@@ -46,15 +46,10 @@
       }
     },
     "grafana": {
-      "command": "podman",
-      "args": [
-        "run", "--rm", "-i",
-        "-e", "GRAFANA_URL=https://hatchengineering.grafana.net",
-        "-e", "GRAFANA_SERVICE_ACCOUNT_TOKEN",
-        "docker.io/mcp/grafana:latest",
-        "-t", "stdio"
-      ],
+      "command": "uvx",
+      "args": ["mcp-grafana@1.0.0"],
       "env": {
+        "GRAFANA_URL": "https://hatchengineering.grafana.net",
         "GRAFANA_SERVICE_ACCOUNT_TOKEN": "${GRAFANA_TOKEN}"
       }
     },
@@ -68,11 +63,11 @@
     },
     "terraform-docs": {
       "command": "podman",
-      "args": ["run", "--rm", "-i", "docker.io/hashicorp/terraform-mcp-server:latest"]
+      "args": ["run", "--rm", "-i", "docker.io/hashicorp/terraform-mcp-server:1.1.0"]
     },
     "opentofu-docs": {
-      "command": "npx",
-      "args": ["-y", "@opentofu/opentofu-mcp-server"]
+      "type": "http",
+      "url": "https://mcp.opentofu.org/mcp"
     },
     "kubernetes": {
       "command": "npx",
