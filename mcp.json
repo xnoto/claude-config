@@ -28,10 +28,7 @@
     },
     "github": {
       "type": "http",
-      "url": "https://api.githubcopilot.com/mcp/",
-      "headers": {
-        "Authorization": "Bearer ${GITHUB_TOKEN}"
-      }
+      "url": "http://127.0.0.1:8778/mcp"
     },
     "grafana": {
       "type": "http",
@@ -63,7 +60,7 @@
     },
     "context7": {
       "type": "http",
-      "url": "https://mcp.context7.com/mcp"
+      "url": "http://127.0.0.1:8781/mcp"
     },
     "argocd-staging-eks": {
       "type": "http",
