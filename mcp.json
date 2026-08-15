@@ -4,6 +4,10 @@
       "command": "context-mode",
       "args": []
     },
+    "parallel-search": {
+      "type": "http",
+      "url": "http://127.0.0.1:8782/mcp"
+    },
     "linear": {
       "type": "http",
       "url": "https://mcp.linear.app/mcp"
