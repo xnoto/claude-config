@@ -77,6 +77,10 @@
     "argocd-makeitwork": {
       "type": "http",
       "url": "http://127.0.0.1:8777/mcp"
+    },
+    "apify": {
+      "type": "http",
+      "url": "http://127.0.0.1:8783/mcp"
     }
   }
 }
