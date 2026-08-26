@@ -30,9 +30,13 @@
       "type": "http",
       "url": "http://127.0.0.1:8767/mcp"
     },
-    "github": {
+    "mcp-gateway": {
       "type": "http",
-      "url": "http://127.0.0.1:8778/mcp"
+      "url": "https://mcp.makeitwork.cloud/mcp",
+      "headers": {
+        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
+        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
+      }
     },
     "grafana": {
       "type": "http",
@@ -54,17 +58,9 @@
       "type": "http",
       "url": "https://mcp.opentofu.org/mcp"
     },
-    "kubernetes": {
-      "type": "http",
-      "url": "http://127.0.0.1:8772/mcp"
-    },
     "opencode-docs": {
       "type": "http",
       "url": "http://127.0.0.1:8773/mcp"
-    },
-    "context7": {
-      "type": "http",
-      "url": "http://127.0.0.1:8781/mcp"
     },
     "argocd-staging-eks": {
       "type": "http",
