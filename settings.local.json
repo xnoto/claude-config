@@ -4,7 +4,7 @@
       "Bash(ssh hero:*)",
       "Bash(ssh:*)",
       "WebSearch",
-      "mcp__parallel-search__*",
+      "mcp__makeitwork-parallel-search__*",
       "WebFetch(domain:dlcdnets.asus.com)"
     ]
   }
