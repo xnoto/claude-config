@@ -108,22 +108,6 @@
         "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
       }
     },
-    "makeitwork-github": {
-      "type": "http",
-      "url": "https://mcp-makeitwork-github.makeitwork.cloud/mcp",
-      "headers": {
-        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
-        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
-      }
-    },
-    "makeitwork-github-xnoto": {
-      "type": "http",
-      "url": "https://mcp-makeitwork-github-xnoto.makeitwork.cloud/mcp",
-      "headers": {
-        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
-        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
-      }
-    },
     "makeitwork-kubernetes": {
       "type": "http",
       "url": "https://mcp-makeitwork-kubernetes.makeitwork.cloud/mcp",
