@@ -39,6 +39,14 @@
         "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
       }
     },
+    "makeitwork-aws": {
+      "type": "http",
+      "url": "https://mcp.makeitwork.cloud/mcp",
+      "headers": {
+        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
+        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
+      }
+    },
     "grafana": {
       "type": "http",
       "url": "http://127.0.0.1:8768/mcp"
