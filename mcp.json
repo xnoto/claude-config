@@ -4,7 +4,7 @@
       "command": "context-mode",
       "args": []
     },
-    "makeitwork-parallel-search": {
+    "parallel-search": {
       "type": "http",
       "url": "https://mcp-parallel-search.makeitwork.cloud/mcp",
       "headers": {
@@ -31,7 +31,7 @@
       "url": "http://127.0.0.1:8766/mcp",
       "timeout": 100000
     },
-    "makeitwork-aws-docs": {
+    "aws-docs": {
       "type": "http",
       "url": "https://mcp-makeitwork-aws-docs.makeitwork.cloud/mcp",
       "headers": {
@@ -59,7 +59,7 @@
       "type": "http",
       "url": "http://127.0.0.1:8770/mcp"
     },
-    "makeitwork-terraform-docs": {
+    "terraform-docs": {
       "type": "http",
       "url": "https://mcp-makeitwork-terraform-docs.makeitwork.cloud/mcp",
       "headers": {
@@ -91,7 +91,7 @@
         "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
       }
     },
-    "makeitwork-apify": {
+    "apify": {
       "type": "http",
       "url": "https://mcp-makeitwork-apify.makeitwork.cloud/mcp",
       "headers": {
@@ -108,7 +108,7 @@
         "UV_HTTP_TIMEOUT": "300"
       }
     },
-    "makeitwork-context7": {
+    "context7": {
       "type": "http",
       "url": "https://mcp-makeitwork-context7.makeitwork.cloud/mcp",
       "headers": {
