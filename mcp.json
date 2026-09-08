@@ -67,10 +67,6 @@
       "type": "http",
       "url": "https://mcp.opentofu.org/mcp"
     },
-    "opencode-docs": {
-      "type": "http",
-      "url": "http://127.0.0.1:8773/mcp"
-    },
     "argocd-staging-eks": {
       "type": "http",
       "url": "http://127.0.0.1:8774/mcp"
