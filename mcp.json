@@ -114,6 +114,14 @@
         "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
         "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
       }
+    },
+    "makeitwork-cloudflare": {
+      "type": "http",
+      "url": "https://mcp-makeitwork-cloudflare.makeitwork.cloud/mcp",
+      "headers": {
+        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
+        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
+      }
     }
   }
 }
