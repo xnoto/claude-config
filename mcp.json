@@ -47,6 +47,15 @@
         "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
       }
     },
+    "makeitwork-gcp": {
+      "type": "http",
+      "url": "https://mcp-makeitwork-gcp.makeitwork.cloud/mcp",
+      "timeout": 120000,
+      "headers": {
+        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
+        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
+      }
+    },
     "grafana": {
       "type": "http",
       "url": "http://127.0.0.1:8768/mcp"
