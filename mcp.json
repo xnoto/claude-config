@@ -22,7 +22,7 @@
       "url": "http://127.0.0.1:8766/mcp",
       "timeout": 100000
     },
-    "makeitwork-aws": {
+    "makeitwork": {
       "type": "http",
       "url": "https://mcp.makeitwork.cloud/mcp",
       "headers": {

@@ -4,9 +4,9 @@ Select by the named target environment. If it is unspecified, ask before queryin
 
 **Hatch** resources: use only `aws-staging`, `aws-prod`, `argocd-staging-eks`, `argocd-prod-eks`, and `grafana`. These are separate servers, so their tools are named `mcp__<server>__<tool>` with no extra prefix — Hatch Grafana is `mcp__grafana__query_prometheus`, not `grafana_query_prometheus`.
 
-**Make IT Work Cloud** resources: use only `makeitwork-aws`. It is an aggregating gateway, so every integration reaches you through it as `mcp__makeitwork-aws__<integration>_<tool>` — for example `mcp__makeitwork-aws__makeitwork-grafana_query_prometheus`, `mcp__makeitwork-aws__makeitwork-argocd_list_applications`, `mcp__makeitwork-aws__makeitwork-kubernetes_pods_list`. There are no standalone `makeitwork-argocd`, `makeitwork-kubernetes`, or `makeitwork-grafana` servers.
+**Make IT Work Cloud** resources: use only `makeitwork`. It is an aggregating gateway, so every integration reaches you through it as `mcp__makeitwork__<integration>_<tool>` — for example `mcp__makeitwork__makeitwork-grafana_query_prometheus`, `mcp__makeitwork__makeitwork-argocd_list_applications`, `mcp__makeitwork__makeitwork-kubernetes_pods_list`. AWS itself is one such integration, reached as `mcp__makeitwork__makeitwork-aws_aws___<tool>`; the gateway is not AWS-specific despite that prefix. There are no standalone `makeitwork-argocd`, `makeitwork-kubernetes`, or `makeitwork-grafana` servers.
 
-**Environment-neutral** tooling also arrives through the `makeitwork-aws` gateway: `makeitwork-parallel-search_*` (web), `makeitwork-context7_*` (library docs), `makeitwork-aws-docs_*`, `makeitwork-terraform-docs_*`, `makeitwork-apify_*`. `opentofu-docs` is a standalone server.
+**Environment-neutral** tooling also arrives through the `makeitwork` gateway: `makeitwork-parallel-search_*` (web), `makeitwork-context7_*` (library docs), `makeitwork-aws-docs_*`, `makeitwork-terraform-docs_*`, `makeitwork-apify_*`. `opentofu-docs` is a standalone server.
 
 ## Tool usage
 
