@@ -22,17 +22,17 @@ external in `xnoto/dotfiles` for the constraints that follow from that.
 ## Deploying a change
 
 1. Commit and push here.
-2. In `xnoto/dotfiles`, put the new commit SHA in the `[".claude"]` external's
-   URL in `.chezmoiexternal.toml.tmpl`, then `make build` and commit.
+2. Run `make install` in `xnoto/dotfiles`.
 
-The external pins a commit SHA and deliberately carries no `checksum.sha256`.
-A commit SHA is already a content address, so the digest would only guard
-against GitHub serving different bytes for the same commit — a threat not
-defended anywhere else in that file, where every other external is a
-`git-repo` with no integrity field. It would also fail spuriously: GitHub does
-not guarantee byte-stable auto-generated archives, and a `git archive` gzip
-change on 2023-01-30 invalidated these digests ecosystem-wide with no content
-change. Pinning by SHA alone keeps the deploy gate without that failure mode.
+Nothing in `xnoto/dotfiles` needs editing. Its `[".claude"]` external tracks
+this repository's `main` branch, so `main` is the deploy boundary: anything
+pushed here ships on the next apply.
+
+The external carries no commit pin and no `checksum.sha256`, matching how the
+other externals in that file track their upstreams. A digest on a GitHub
+auto-generated archive fails spuriously — GitHub does not guarantee those
+archives are byte-stable, and a `git archive` gzip change on 2023-01-30
+invalidated such digests ecosystem-wide with no content change at all.
 
 ## Known upstream issues
 
