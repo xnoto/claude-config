@@ -4,15 +4,6 @@
       "command": "context-mode",
       "args": []
     },
-    "parallel-search": {
-      "type": "http",
-      "url": "https://mcp-makeitwork-parallel-search.makeitwork.cloud/mcp",
-      "headers": {
-        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
-        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}",
-        "User-Agent": "makeitwork-mcp-client/1.0"
-      }
-    },
     "linear": {
       "type": "http",
       "url": "https://mcp.linear.app/mcp"
@@ -30,14 +21,6 @@
       "type": "http",
       "url": "http://127.0.0.1:8766/mcp",
       "timeout": 100000
-    },
-    "aws-docs": {
-      "type": "http",
-      "url": "https://mcp-makeitwork-aws-docs.makeitwork.cloud/mcp",
-      "headers": {
-        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
-        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
-      }
     },
     "makeitwork-aws": {
       "type": "http",
@@ -59,14 +42,6 @@
       "type": "http",
       "url": "http://127.0.0.1:8771/mcp"
     },
-    "terraform-docs": {
-      "type": "http",
-      "url": "https://mcp-makeitwork-terraform-docs.makeitwork.cloud/mcp",
-      "headers": {
-        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
-        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
-      }
-    },
     "opentofu-docs": {
       "type": "http",
       "url": "https://mcp.opentofu.org/mcp"
@@ -78,46 +53,6 @@
     "argocd-prod-eks": {
       "type": "http",
       "url": "http://127.0.0.1:8775/mcp"
-    },
-    "makeitwork-argocd": {
-      "type": "http",
-      "url": "https://mcp-makeitwork-argocd.makeitwork.cloud/mcp",
-      "headers": {
-        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
-        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
-      }
-    },
-    "apify": {
-      "type": "http",
-      "url": "https://mcp-makeitwork-apify.makeitwork.cloud/mcp",
-      "headers": {
-        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
-        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
-      }
-    },
-    "context7": {
-      "type": "http",
-      "url": "https://mcp-makeitwork-context7.makeitwork.cloud/mcp",
-      "headers": {
-        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
-        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
-      }
-    },
-    "makeitwork-kubernetes": {
-      "type": "http",
-      "url": "https://mcp-makeitwork-kubernetes.makeitwork.cloud/mcp",
-      "headers": {
-        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
-        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
-      }
-    },
-    "makeitwork-grafana": {
-      "type": "http",
-      "url": "https://mcp-makeitwork-grafana.makeitwork.cloud/mcp",
-      "headers": {
-        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
-        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
-      }
     }
   }
 }

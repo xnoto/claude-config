@@ -4,6 +4,17 @@
     "commit": "",
     "pr": ""
   },
+  "env": {
+    "MCP_TIMEOUT": "10000"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(ssh:*)",
+      "WebSearch",
+      "WebFetch(domain:dlcdnets.asus.com)",
+      "mcp__makeitwork-aws__makeitwork-parallel-search_*"
+    ]
+  },
   "enabledPlugins": {
     "claude-mem@thedotmack": true,
     "context-mode@context-mode": true
@@ -12,13 +23,15 @@
     "thedotmack": {
       "source": {
         "source": "github",
-        "repo": "thedotmack/claude-mem"
+        "repo": "thedotmack/claude-mem",
+        "ref": "v13.24.20"
       }
     },
     "context-mode": {
       "source": {
         "source": "github",
-        "repo": "mksglu/context-mode"
+        "repo": "mksglu/context-mode",
+        "ref": "v1.0.169"
       }
     }
   }

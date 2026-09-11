@@ -1,0 +1,4 @@
+# Personal, machine-local permission grants. Claude Code writes this file itself;
+# it must never be committed or deployed to ~/.claude.
+.claude/settings.local.json
+settings.local.json
