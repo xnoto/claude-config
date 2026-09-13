@@ -12,7 +12,7 @@
       "Bash(ssh:*)",
       "WebSearch",
       "WebFetch(domain:dlcdnets.asus.com)",
-      "mcp__makeitwork-parallel-search__*"
+      "mcp__parallel-search__*"
     ]
   },
   "enabledPlugins": {
