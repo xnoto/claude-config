@@ -22,9 +22,113 @@
       "url": "http://127.0.0.1:8766/mcp",
       "timeout": 100000
     },
-    "makeitwork": {
+    "makeitwork-apify": {
       "type": "http",
-      "url": "https://mcp.makeitwork.cloud/mcp",
+      "url": "https://mcp-apify.makeitwork.cloud/mcp",
+      "headers": {
+        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
+        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
+      }
+    },
+    "makeitwork-argocd": {
+      "type": "http",
+      "url": "https://mcp-argocd.makeitwork.cloud/mcp",
+      "headers": {
+        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
+        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
+      }
+    },
+    "makeitwork-aws": {
+      "type": "http",
+      "url": "https://mcp-aws.makeitwork.cloud/mcp",
+      "headers": {
+        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
+        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
+      }
+    },
+    "makeitwork-aws-docs": {
+      "type": "http",
+      "url": "https://mcp-aws-docs.makeitwork.cloud/mcp",
+      "headers": {
+        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
+        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
+      }
+    },
+    "makeitwork-cloudflare": {
+      "type": "http",
+      "url": "https://mcp-cloudflare.makeitwork.cloud/mcp",
+      "headers": {
+        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
+        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
+      }
+    },
+    "makeitwork-context7": {
+      "type": "http",
+      "url": "https://mcp-context7.makeitwork.cloud/mcp",
+      "headers": {
+        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
+        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
+      }
+    },
+    "makeitwork-gcp": {
+      "type": "http",
+      "url": "https://mcp-gcp.makeitwork.cloud/mcp",
+      "headers": {
+        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
+        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
+      }
+    },
+    "makeitwork-grafana": {
+      "type": "http",
+      "url": "https://mcp-grafana.makeitwork.cloud/mcp",
+      "headers": {
+        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
+        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
+      }
+    },
+    "makeitwork-kubernetes": {
+      "type": "http",
+      "url": "https://mcp-kubernetes.makeitwork.cloud/mcp",
+      "headers": {
+        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
+        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
+      }
+    },
+    "makeitwork-parallel-search": {
+      "type": "http",
+      "url": "https://mcp-parallel-search.makeitwork.cloud/mcp",
+      "headers": {
+        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
+        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
+      }
+    },
+    "makeitwork-playwright": {
+      "type": "http",
+      "url": "https://mcp-playwright.makeitwork.cloud/mcp",
+      "headers": {
+        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
+        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
+      }
+    },
+    "makeitwork-slidespeak": {
+      "type": "http",
+      "url": "https://mcp-slidespeak.makeitwork.cloud/mcp",
+      "headers": {
+        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
+        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
+      }
+    },
+    "makeitwork-terraform-docs": {
+      "type": "http",
+      "url": "https://mcp-terraform-docs.makeitwork.cloud/mcp",
+      "headers": {
+        "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
+        "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
+      }
+    },
+    "makeitwork-twilio-docs": {
+      "type": "http",
+      "url": "https://mcp-twilio-docs.makeitwork.cloud/mcp",
       "headers": {
         "CF-Access-Client-Id": "${CF_ACCESS_CLIENT_ID}",
         "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
