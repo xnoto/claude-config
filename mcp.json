@@ -54,7 +54,7 @@
         "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
       }
     },
-    "cloudflare": {
+    "makeitwork-cloudflare": {
       "type": "http",
       "url": "https://mcp-cloudflare.makeitwork.cloud/mcp",
       "headers": {
@@ -70,7 +70,7 @@
         "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
       }
     },
-    "gcp": {
+    "makeitwork-gcp": {
       "type": "http",
       "url": "https://mcp-gcp.makeitwork.cloud/mcp",
       "headers": {
