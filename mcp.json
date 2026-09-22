@@ -86,7 +86,7 @@
         "CF-Access-Client-Secret": "${CF_ACCESS_CLIENT_SECRET}"
       }
     },
-    "kubernetes": {
+    "makeitwork-kubernetes": {
       "type": "http",
       "url": "https://mcp-kubernetes.makeitwork.cloud/mcp",
       "headers": {
