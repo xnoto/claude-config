@@ -2,13 +2,15 @@
 
 Version-controlled Claude Code configuration. This repository is the canonical
 producer for the rendered `~/.claude` target; it is consumed by `xnoto/dotfiles`
-as a pinned chezmoi archive external, not cloned or applied directly.
+as a main-branch chezmoi archive external, not cloned or applied directly.
 
 | File | Deployed to | Purpose |
 | --- | --- | --- |
-| `CLAUDE.md` | `~/.claude/CLAUDE.md` | Global instructions, MCP routing |
+| `CLAUDE.md` | `~/.claude/CLAUDE.md` | Global instructions, MCP routing, skill selection and execution boundaries |
 | `settings.json` | `~/.claude/settings.json` | User-scope settings, permissions, plugins |
 | `mcp.json` | `~/.claude/mcp.json` | MCP servers, loaded via `--mcp-config` |
+| `skills/context7/SKILL.md` | `~/.claude/skills/context7/SKILL.md` | On-demand library documentation workflow |
+| `skills/context-mode-routing-policy/SKILL.md` | `~/.claude/skills/context-mode-routing-policy/SKILL.md` | Bounded context-mode use without bypassing dedicated tools or approvals |
 
 Repository tooling (`README.md`, `LICENSE`, `.gitignore`,
 `.pre-commit-config.yaml`, `.secrets.baseline`) is excluded from the archive and
@@ -18,6 +20,38 @@ never lands in `~/.claude`.
 (`projects/`, `sessions/`, `plugins/`, `history.jsonl`). This repository
 contributes files to that directory; it does not own it. See the `[".claude"]`
 external in `xnoto/dotfiles` for the constraints that follow from that.
+
+## Context skills
+
+The two user skills are instruction-only. `context7` is loaded for relevant
+library documentation; `context-mode-routing-policy` is loaded before substantial
+output processing or context-mode execution. `CLAUDE.md` retains the load-bearing
+safety rules even before a skill is loaded and provides a relative-file fallback
+if skill discovery is unavailable.
+
+The existing `context-mode@context-mode` plugin is already enabled in
+`settings.json`, pinned through its marketplace to `v1.0.169`. Its
+[plugin manifest](https://github.com/mksglu/context-mode/blob/589d8214d56740a28b5f7bf63167743d586b0b40/.claude-plugin/plugin.json)
+loads its own skills, including `context-mode`. The distinct local name
+`context-mode-routing-policy` avoids shadowing that upstream skill. It supplements
+routing and approval policy, not the plugin's implementation or hooks. Native
+[user-skill discovery](https://code.claude.com/docs/en/skills) uses
+`~/.claude/skills`; the current archive mapping includes these files without a
+dotfiles change. This repository owns its native instructions; they are not
+generated or automatically synchronized from `opencode-config`.
+
+This change does not alter plugin versions, MCP entries, permissions, hooks,
+packages, or agent definitions. The existing bare context-mode executable and
+remote Context7 connection still need their normal runtime prerequisites. Missing
+tools must produce a reported limitation and bounded read-only fallback, not an
+automatic installation, upgrade, or configuration repair.
+
+Pre-commit currently checks JSON syntax and secret detection; there is no GitHub
+Actions workflow or skill-runtime test. Static review does not establish plugin
+installation, skill discovery, hook behavior, or MCP health. After approved source
+publication and owner-run installation, a new client session and controlled
+routing/discovery checks remain separate verification steps. Do not run
+installation, service actions, or credentialed probes merely to validate source.
 
 ## Deploying a change
 
