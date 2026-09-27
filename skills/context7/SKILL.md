@@ -20,7 +20,7 @@ Use the configured Context7 MCP for library documentation when accurate, current
 2. Use the configured server's library-ID resolution tool first, then query its documentation with the exact returned ID. Skip resolution only if the current tool contract permits an exact ID already supplied by the user.
 3. Keep each query focused on one API or behavior. Follow the current tool descriptions, schemas, and call limits; client namespaces may differ from backend names.
 4. Cite the source documentation and applicable version. Distinguish documented behavior from inference and unverified runtime behavior.
-5. If the server is missing, no matching library/version is available, or the results are insufficient, disclose that limit and use an approved official-documentation/web tool. Never fabricate an ID, silently install tooling, or bypass authentication or permission failures.
+5. If the server is missing, no matching library/version is available, or the results are insufficient, disclose that limit. Use an approved official-documentation/web tool only when the governing tool contract permits that fallback; this does not authorize context-mode execution as a substitute. A denial or authentication failure is not a fallback trigger: report it and stop that access attempt. Never fabricate an ID or silently install tooling.
 
 ## Data and scope
 
