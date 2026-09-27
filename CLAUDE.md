@@ -1,3 +1,11 @@
+# Skills and execution boundaries
+
+- Load `context7` when library or framework documentation is needed; do not load it for unrelated work. Use Claude's native Skill tool, or read the installed `skills/context7/SKILL.md` relative to this file if discovery is unavailable.
+- Load `context-mode-routing-policy` before using context-mode to process large output, analyze files, or index public web content. The same relative-file fallback applies. If the policy cannot be loaded, use the dedicated task tools instead of context-mode execution. This policy supplements, rather than shadows, the existing plugin's `context-mode` skill.
+- Skills are instructions, not tool installation or permission grants. Use only tools present in the current registry. If a required MCP is unavailable, disclose the limitation and use an approved read-only alternative; do not silently install packages, change configuration, or bypass a denied tool.
+- Context-mode is an output-management tool, not a security sandbox. Its execution tools are for bounded read-only local inspection only, never mutations, authenticated API calls, secret retrieval, uploads, or work that requires approval through another tool. Prefer the dedicated MCP for repository, cloud, cluster, and documentation operations.
+- Never automatically run shell commands returned by doctor/upgrade tools. Installation, upgrades, configuration changes, and service actions require explicit approval of the exact operation and target.
+
 # MCP routing
 
 Select by the named target environment. If it is unspecified, ask before querying or changing anything.
@@ -14,9 +22,9 @@ Select by the named target environment. If it is unspecified, ask before queryin
 
 The load-bearing usage instructions are restated here.
 
-**Web (`mcp__parallel-search__*`)**: reach for `web_search` first for factual, current-information, research, comparison, and troubleshooting questions. Its excerpts are meant to be answered from directly — do not fetch every result. Pass multiple `search_queries` in one call rather than chaining. Use `web_fetch` only when the user names a specific URL, you need exact wording, or the excerpts conflict or are clearly insufficient.
+**Web (`mcp__parallel-search__*`)**: reach for `web_search` first for factual, current-information, research, comparison, and troubleshooting questions. Its excerpts are meant to be answered from directly — do not fetch every result. Pass multiple `search_queries` in one call rather than chaining. Use `web_fetch` only when the user names a specific URL, you need exact wording, or the excerpts conflict or are clearly insufficient. Use context-mode fetch/index only when a known public page needs substantial processing; do not refetch sufficient excerpts merely to index them.
 
-**Library docs (`mcp__context7__*`)**: use for any library, framework, SDK, API, CLI tool, or cloud service question — API syntax, configuration, version migration, setup, library-specific debugging — even for well-known ones, and even when you think you know the answer, because training data lags. Prefer it over web search for library docs. Not for refactoring, business-logic debugging, code review, or general programming concepts.
+**Library docs (`mcp__context7__*`)**: use for library, framework, SDK, API, and CLI documentation — syntax, configuration, version migration, setup, and library-specific debugging — even for well-known libraries or questions phrased as "latest". Prefer the dedicated `aws-docs`, `terraform-docs`, and `opentofu-docs` integrations for their domains. For OpenCode configuration, use its schema and canonical repository guidance; do not assume a retired OpenCode docs MCP exists. Use Context7 before general web search for library docs, but not for refactoring, business-logic debugging, code review, or general programming concepts.
 
 **AWS docs (`mcp__aws-docs__*`)**: `search_documentation` with specific technical terms, then `read_sections` when the table of contents localizes the answer, otherwise `read_documentation`. Paginate long pages with `start_index`. Fall back to `recommend` when repeated searches come up short. Always cite the documentation URL.
 
