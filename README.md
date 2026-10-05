@@ -9,6 +9,7 @@ as a main-branch chezmoi archive external, not cloned or applied directly.
 | `CLAUDE.md` | `~/.claude/CLAUDE.md` | Global instructions, MCP routing, skill selection and execution boundaries |
 | `settings.json` | `~/.claude/settings.json` | User-scope settings, permissions, plugins |
 | `mcp.json` | `~/.claude/mcp.json` | MCP servers, loaded via `--mcp-config` |
+| `agents/*.md` | `~/.claude/agents/*.md` | Supplied-material specialist subagents |
 | `skills/context7/SKILL.md` | `~/.claude/skills/context7/SKILL.md` | On-demand library documentation workflow |
 | `skills/context-mode-routing-policy/SKILL.md` | `~/.claude/skills/context-mode-routing-policy/SKILL.md` | Bounded context-mode use without bypassing dedicated tools or approvals |
 
@@ -40,8 +41,8 @@ routing and approval policy, not the plugin's implementation or hooks. Native
 dotfiles change. This repository owns its native instructions; they are not
 generated or automatically synchronized from `opencode-config`.
 
-This change does not alter plugin versions, MCP entries, permissions, hooks,
-packages, or agent definitions. The existing bare context-mode executable and
+The context-skill files do not alter plugin versions, MCP entries, permissions,
+hooks, packages, or agent definitions. The existing bare context-mode executable and
 remote Context7 connection still need their normal runtime prerequisites. Missing
 tools must produce a reported limitation and bounded read-only fallback, not an
 automatic installation, upgrade, or configuration repair.
