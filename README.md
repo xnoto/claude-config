@@ -9,6 +9,7 @@ as a main-branch chezmoi archive external, not cloned or applied directly.
 | `CLAUDE.md` | `~/.claude/CLAUDE.md` | Global instructions, MCP routing, skill selection and execution boundaries |
 | `settings.json` | `~/.claude/settings.json` | User-scope settings, permissions, plugins |
 | `mcp.json` | `~/.claude/mcp.json` | MCP servers, loaded via `--mcp-config` |
+| `agents/*.md` | `~/.claude/agents/*.md` | Supplied-material specialist subagents |
 | `skills/context7/SKILL.md` | `~/.claude/skills/context7/SKILL.md` | On-demand library documentation workflow |
 | `skills/context-mode-routing-policy/SKILL.md` | `~/.claude/skills/context-mode-routing-policy/SKILL.md` | Bounded context-mode use without bypassing dedicated tools or approvals |
 
@@ -40,8 +41,8 @@ routing and approval policy, not the plugin's implementation or hooks. Native
 dotfiles change. This repository owns its native instructions; they are not
 generated or automatically synchronized from `opencode-config`.
 
-This change does not alter plugin versions, MCP entries, permissions, hooks,
-packages, or agent definitions. The existing bare context-mode executable and
+The context-skill files do not alter plugin versions, MCP entries, permissions,
+hooks, packages, or agent definitions. The existing bare context-mode executable and
 remote Context7 connection still need their normal runtime prerequisites. Missing
 tools must produce a reported limitation and bounded read-only fallback, not an
 automatic installation, upgrade, or configuration repair.
@@ -114,3 +115,48 @@ silently ignored, as is any project `.mcp.json`. Add servers by editing
 
 As of 2026-09-11 the top-level `mcpServers` key in `~/.claude.json` is empty and
 no project defines local-scope servers, so nothing is currently being masked.
+
+## Bounded specialist subagents
+
+Native user agents live in `agents/*.md` and travel through the existing archive
+to `~/.claude/agents/`; no dotfiles mapping change is required.
+
+| Agent | Use |
+| --- | --- |
+| `adversarial-code-reviewer` | Independent completed-diff review before a PR or a requested second opinion. |
+| `qa-engineer` | Acceptance-to-check coverage, test cases, and documentation adequacy. |
+| `docs-writer` | Standalone documentation drafting; not agent policy, skills, or knowledge bases. |
+| `infra-security-reviewer` | Infrastructure secret-handling, privilege, exposure, and supply-chain review. |
+| `devops-engineer` | DESIGN/CHANGE review of CI, workflows, artifacts, runners, and integration contracts. |
+| `release-engineer` | Actual release-contract, version, pin, generated-copy, and delivery-stage review. |
+| `cloud-architecture-reviewer` | Preimplementation review of new/material cloud service, state, recovery, scaling, or cost decisions. |
+
+The primary supplies the complete relevant evidence, intent, repository contracts,
+producer-consumer context, and validation status. Missing essential inputs return
+HOLD or BLOCKED; reviewers do not browse for substitutes. Use fresh reviewer
+context and invoke roles selectively, not all seven on every change. Resolve
+Critical/High findings or obtain an explicit owner waiver. Verdicts never authorize
+merge, publication, deployment, installation, or live mutation. Models inherit the
+parent; no chart provider pins are imported.
+
+These native files are independently adapted from the roles in
+[opencode-server](https://github.com/makeitworkcloud/charts/tree/70c96e408c6bc0e04532a055c8558a38c2d861be/opencode-server/files/agents).
+Each config repository owns its copies; no generator or automatic synchronization
+was introduced. The source chart, MCP endpoints, packages, and primary model
+settings are unchanged.
+
+Each definition sets `tools: []` and `model: inherit`, with no hooks, memory,
+inline MCP servers, or permission-mode override. The
+[Claude subagent reference](https://code.claude.com/docs/en/sub-agents) and
+[zero-tools exception](https://code.claude.com/docs/en/errors#agent-would-be-spawned-with-zero-tools)
+document explicit empty tool lists launching without tools. Omitting the tools
+field would instead inherit tools, so it is deliberately present in every file.
+
+The existing pre-commit hooks do not validate agent frontmatter or native launch
+semantics, and this repository has no Actions workflow. Independent static review
+is not runtime validation. After an approved merge and owner-run archive update,
+a fresh session must verify all seven roles, inherited model, and denied native
+and MCP tool access before relying on them. An older client, project/managed
+definition, or plugin can change discovery or precedence; inspect the effective
+agent. The non-exact archive preserves runtime state and does not guarantee
+removal of added files on rollback. No installation or restart is performed here.

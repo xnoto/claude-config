@@ -37,3 +37,39 @@ The load-bearing usage instructions are restated here.
 ## Codebase Memory routing
 
 `codebase-memory` is a local, derived code-discovery index served by the MCP gateway. Use it only for repositories below `~/git`, and index each repository explicitly rather than indexing the parent directory. Keep shared graph-artifact persistence disabled so repository source is not modified. Indexing changes local derived state and requires confirmation. Its local index can be stale or incomplete; use GitHub for exact file reads, remote branch heads, repository writes, and freshness-critical claims.
+
+## Bounded specialist delegation
+
+Use the following supplied-material subagents selectively; do not run the whole
+roster for every change:
+
+- `adversarial-code-reviewer`: independent review of a completed non-trivial
+  implementation before opening its PR, or an explicitly requested second opinion.
+- `qa-engineer`: acceptance-to-check coverage, concrete test cases, and
+  documentation adequacy; it does not implement tests or execute checks.
+- `docs-writer`: standalone README, guide, and release-note drafting from
+  supplied sources; not agent instructions, skills, policies, or knowledge bases.
+- `infra-security-reviewer`: infrastructure-diff security review of privileges,
+  secret handling, exposure, and supply-chain boundaries; never secret values.
+- `devops-engineer`: DESIGN or CHANGE review of CI, workflow, artifact, runner,
+  and delivery integration contracts; not implementation or live operations.
+- `release-engineer`: versions, pins, generated copies, release documentation,
+  and downstream stages against the actual repository release contract.
+- `cloud-architecture-reviewer`: before implementing a new cloud service or
+  material topology, state, recovery, scaling, service-selection, or cost change.
+
+The primary gathers and supplies the complete relevant evidence, acceptance
+criteria, repository guidance, producer-consumer context, and validation status.
+These seven agents do not retrieve sources or load skills: their supplied-material
+contract takes precedence over task-related tool/skill routing in this file.
+Keep universal safety constraints, and never supply prohibited secret or state
+material. Use fresh reviewer context, not a full-history fork of the authoring
+session. Missing essential evidence must produce HOLD or BLOCKED, not invented
+facts. Resolve Critical/High findings or obtain an explicit owner waiver; do not
+treat a verdict as merge, publication, deployment, or runtime authorization.
+The primary retains implementation and final decisions.
+
+If native agent discovery is unavailable, report that limitation; do not pretend
+a named independent review occurred or silently install/repair the client.
+Models are inherited unless explicitly selected by the caller. Do not substitute
+provider aliases for specialist roles.
