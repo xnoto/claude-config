@@ -54,6 +54,15 @@ publication and owner-run installation, a new client session and controlled
 routing/discovery checks remain separate verification steps. Do not run
 installation, service actions, or credentialed probes merely to validate source.
 
+## Hatch toolkit plugin
+
+`hatch-toolkit@hatch1fy` comes from a `directory` marketplace at
+`~/git/hatch1fy/opencode-toolkit/dist/claude`. That directory is generated and
+git-ignored, so run `make export-claude` in that checkout once to create it and
+install the plugin. Its `SessionStart` hook regenerates it only while the
+checkout is on `main`. If the directory is missing, Claude Code cannot load the
+plugin.
+
 ## Deploying a change
 
 1. Commit and push here.

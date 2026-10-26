@@ -17,7 +17,8 @@
   },
   "enabledPlugins": {
     "claude-mem@thedotmack": true,
-    "context-mode@context-mode": true
+    "context-mode@context-mode": true,
+    "hatch-toolkit@hatch1fy": true
   },
   "extraKnownMarketplaces": {
     "thedotmack": {
@@ -32,6 +33,12 @@
         "source": "github",
         "repo": "mksglu/context-mode",
         "ref": "v1.0.169"
+      }
+    },
+    "hatch1fy": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/swelch/git/hatch1fy/opencode-toolkit/dist/claude"
       }
     }
   }
