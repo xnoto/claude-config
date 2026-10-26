@@ -38,7 +38,7 @@
     "hatch1fy": {
       "source": {
         "source": "directory",
-        "path": "/Users/swelch/git/hatch1fy/opencode-toolkit/dist/claude"
+        "path": "~/git/hatch1fy/opencode-toolkit/dist/claude"
       }
     }
   }
